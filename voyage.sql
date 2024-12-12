@@ -1,7 +1,7 @@
 
 -- -- ===== Creation d'une database =====
-CREATE DATABASE test3;
-use test3;
+CREATE DATABASE voyage;
+use voyage;
 
 -- ===== Creation des Tables =====
 CREATE TABLE activite (
