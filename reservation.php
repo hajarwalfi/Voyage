@@ -61,11 +61,7 @@ $title = "Gestion des réservations";
         $sql = "INSERT INTO reservation (date_reservation, statut, id_client, id_activite) 
                 VALUES ('$date_reservation','$statut','$id_client','$id_activite')";
             
-        if (mysqli_query($conn, $sql)) {
-            echo "Réservation ajoutée avec succès";
-        } else {
-            echo "Erreur : " . $sql . "<br>" . mysqli_error($conn);
-        }
+        mysqli_query($conn, $sql);
     }
     
 
@@ -84,7 +80,7 @@ $title = "Gestion des réservations";
 
     if ($resultat) {
         echo '<div class="Table mt-8 h-[65%] overflow-auto">';
-        echo '<table class="w-full  overflow-auto text-sm text-center text-gray-500 bg-gray-100 rounded-md border border-purple-500 overflow-hidden">';
+        echo '<table class="w-full  overflow-auto text-sm text-center text-gray-500 bg-gray-100 rounded-md border border-purple-500 ">';
         echo '<thead class="text-s text-gray-700  bg-[#f9f3fe]">';
         echo '<tr>
                 <th scope="col" class="px-6 py-3">ID Reservation</th>

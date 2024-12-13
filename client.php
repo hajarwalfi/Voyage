@@ -4,7 +4,7 @@ ob_start();
 $title = "Gestion des clients";
 ?>
 
-<section class="Formulaire_client bg-[#f9f3fe] h-[30%] w-full rounded-md grid grid-cols-[80%_20%] px-8 py-1">
+<section class="Formulaire_client bg-[#f9f3fe] h-[40%] w-full rounded-md grid grid-cols-[80%_20%] px-8 py-1">
     <form id="form" class="grid grid-cols-2 md:grid-cols-3 md:grid-rows-3 gap-1 text-center items-center self-center justify-center" action="" method="post">
 
         <div class="flex flex-col gap-1">
@@ -67,6 +67,8 @@ $title = "Gestion des clients";
 
         $sql = "INSERT INTO client (nom, prenom, telephone, email ,adresse ,date_naissance) 
                 VALUES ('$nom','$prenom','$telephone', '$email' ,'$adresse','$date_naissance')";
+
+        mysqli_query($conn, $sql);        
     }
 
     // End Ajouter une réservation
@@ -78,7 +80,7 @@ $title = "Gestion des clients";
     $resultat = mysqli_query($conn, $query_select);
 
     if ($resultat) {
-        echo '<section class="Table mt-8 h-[65%] overflow-auto">';
+        echo '<section class="Table  mt-8 mb-8 h-[65%] overflow-auto">';
         echo '<table class="w-full  overflow-auto text-sm text-center text-gray-500 bg-gray-100 rounded-md border border-purple-500 overflow-hidden">';
         echo '<thead class="text-s text-gray-700  bg-[#f9f3fe]">';
         echo '<tr>

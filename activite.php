@@ -43,7 +43,7 @@ $title = "Gestion des activités";
         </div>
         
         <div>
-            <button name="ajouter_activite" id="ajouter_activite" class="mt-4 items-center self-center align-middle  bg-[#d5a6f6] w-fit p-4 text-black hover:bg-[#a658d1] py-2 rounded-md">Ajouter le client</button>
+            <button name="ajouter_activite" id="ajouter_activite" class="mt-4 items-center self-center align-middle  bg-[#d5a6f6] w-fit p-4 text-black hover:bg-[#a658d1] py-2 rounded-md">Ajouter l'activité</button>
         </div>
         <div></div>
 
@@ -70,9 +70,10 @@ $title = "Gestion des activités";
         $places_disponibles = mysqli_real_escape_string($conn, $_POST['places_disponibles']);
         
     
-        $sql = "INSERT INTO reservation (id_activite, titre, description, destination, prix, date_debut, date_fin, places_disponibles) 
+        $sql = "INSERT INTO activite (titre, description, destination, prix, date_debut, date_fin, places_disponibles) 
                 VALUES ('$titre','$description','$destination','$prix','$date_debut','$date_fin','$places_disponibles')";
-            
+
+        mysqli_query($conn, $sql); 
     }
     
 
@@ -85,9 +86,9 @@ $title = "Gestion des activités";
 
 
     if ($resultat) {
-        echo '<div class="overflow-x-auto relative mt-4">';
-        echo '<table class="table-auto w-full text-sm text-left text-gray-500 border border-gray-200">';
-        echo '<thead class="text-xs text-gray-700 uppercase bg-gray-100 border-b border-gray-200">';
+        echo '<div class="Table mt-8 h-[65%] overflow-auto">';
+        echo '<table class="w-full  overflow-auto text-sm text-center text-gray-500 bg-gray-100 rounded-md border border-purple-500 ">';
+        echo '<thead class="text-s text-gray-700  bg-[#f9f3fe]">';
         echo '<tr>
                 <th scope="col" class="px-6 py-3">ID Activité</th>
                 <th scope="col" class="px-6 py-3">Titre</th>
