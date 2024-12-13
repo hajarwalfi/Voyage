@@ -18,12 +18,12 @@
 
 <body class="flex flex-col gap-5 w-full">
     <header>
-        <div class="title flex items-center justify-between p-4 gap-1 h-20 ">
-            <img class="w-16" src="./assets/logo1.png">
-            <div class="flex gap-4 items-center text-black font-bold">
-                <a href="client.php" >Clients</a>
-                <a href="reservation.php">Reservations</a>
-                <a href="activite.php">Activités</a>
+        <div class="title flex items-center justify-between  pl-2 gap-1 h-20 ">
+            <img class="w-20" src="./assets/logo1.png">
+            <div class="flex gap-4 items-center text-white bg-[#a658d1]  w-fit p-2 rounded-tl-xl  rounded-bl-xl font-bold">
+                <a href="client.php" class="hover:text-[#fec342]" >Clients</a>
+                <a href="reservation.php" class="hover:text-[#fec342]" >Reservations</a>
+                <a href="activite.php" class="hover:text-[#fec342]" >Activités</a>
             </div>
         </div>
     </header>

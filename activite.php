@@ -4,45 +4,45 @@ ob_start();
 $title = "Gestion des activités";
 ?>
 
-<section class="Formulaire_client bg-[#f9f3fe] h-[40%] w-full rounded-md grid grid-cols-[80%_20%] px-8 py-1">
-    <form id="form" class="grid md:grid-cols-5 gap-1 text-center items-center self-center justify-center" action="" method="post">
+<section class="Formulaire_client bg-[#f9f3fe] h-[30%] w-full rounded-md grid md:grid-cols-[80%_20%]  grid-cols-1 px-8 py-1  border border-purple-500">
+    <form id="form" class="flex flex-wrap md:grid md:grid-cols-7 gap-3 text-center items-center self-center justify-center" action="" method="post">
 
         <div class="flex flex-col gap-1">
-            <label class="font-bold" for="titre">Titre</label>
+            <label class="font-bold text-sm" for="titre">Titre</label>
             <input type="text" id="titre" name="titre" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
 
         <div class="flex flex-col gap-1">
-            <label class="font-bold" for="description">Description</label>
+            <label class="font-bold text-sm" for="description">Description</label>
             <input type="text" id="description" name="description" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
 
         <div class="flex flex-col gap-1">
-            <label class="font-bold" for="destination">Destination</label>
+            <label class="font-bold text-sm" for="destination">Destination</label>
             <input type="text" id="destination" name="destination" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
 
         <div class="flex flex-col gap-1">
-            <label class="font-bold" for="prix">Prix</label>
+            <label class="font-bold text-sm" for="prix">Prix</label>
             <input type="number" id="prix" name="prix" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
             
         <div class="flex flex-col gap-1">
-            <label class="font-bold" for="date_debut">Date de Début</label>
+            <label class="font-bold text-sm" for="date_debut">Date de Début</label>
             <input type="date" id="date_debut" name="date_debut" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
 
         <div class="flex flex-col gap-1">
-            <label class="font-bold" for="date_fin">Date de Fin</label>
+            <label class="font-bold text-sm" for="date_fin">Date de Fin</label>
             <input type="date" id="date_fin" name="date_fin" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
 
         <div class="flex flex-col gap-1">
-            <label class="font-bold" for="places_disponibles">Places disponibles</label>
+            <label class="font-bold text-sm" for="places_disponibles">Places disponibles</label>
             <input type="number" id="places_disponibles" name="places_disponibles" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
         
-        <div>
+        <div class="col-span-7">
             <button name="ajouter_activite" id="ajouter_activite" class="mt-4 items-center self-center align-middle  bg-[#d5a6f6] w-fit p-4 text-black hover:bg-[#a658d1] py-2 rounded-md">Ajouter l'activité</button>
         </div>
         <div></div>
@@ -86,8 +86,8 @@ $title = "Gestion des activités";
 
 
     if ($resultat) {
-        echo '<div class="Table mt-8 h-[65%] overflow-auto">';
-        echo '<table class="w-full  overflow-auto text-sm text-center text-gray-500 bg-gray-100 rounded-md border border-purple-500 ">';
+        echo '<div class="Table mt-8 h-[50%] overflow-auto">';
+        echo '<table class="w-full overflow-auto text-sm text-center text-gray-500 bg-gray-100  border border-purple-500 ">';
         echo '<thead class="text-s text-gray-700  bg-[#f9f3fe]">';
         echo '<tr>
                 <th scope="col" class="px-6 py-3">ID Activité</th>
@@ -103,7 +103,7 @@ $title = "Gestion des activités";
         echo '<tbody>';
     
         while ($row = mysqli_fetch_assoc($resultat)) {
-            echo '<tr class="bg-white border-b hover:bg-gray-50">';
+            echo '<tr class="bg-white lowercase hover:bg-purple-50">';
             echo "<td class='px-6 py-4'>{$row['id_activite']}</td>";
             echo "<td class='px-6 py-4'>{$row['titre']}</td>";
             echo "<td class='px-6 py-4'>{$row['description']}</td>";

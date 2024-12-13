@@ -5,15 +5,15 @@ $title = "Gestion des réservations";
 ?>
 
 <section class="Formulaire_client bg-[#f9f3fe] h-[50%] w-full rounded-md grid grid-cols-[80%_20%] px-8 py-1">
-    <form id="form" class="grid grid-cols-2 md:grid-cols-4 gap-1 text-center items-center justify-center" action="" method="post">
+    <form id="form" class=" grid md:grid-cols-4 gap-3 text-center items-center self-center justify-cente" action="" method="post">
 
         <div class="flex flex-col gap-1">
-            <label for="date_reservation">Date de la reservation:</label>
+            <label class="font-bold text-sm" for="date_reservation">Date de la reservation:</label>
             <input type="date" id="date_reservation" name="date_reservation" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
 
         <div class="flex flex-col gap-1">
-            <label for="statut">Statut:</label>
+            <label class="font-bold text-sm" for="statut">Statut:</label>
             <select id="statut" name="statut" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
                 <option value="Confirmée">Confirmée</option>
                 <option value="Annulée">Annulée</option>
@@ -22,18 +22,18 @@ $title = "Gestion des réservations";
         </div>
         
         <div class="flex flex-col gap-1">
-            <label for="id_client">ID client:</label>
+            <label class="font-bold text-sm"  for="id_client">ID client:</label>
             <input type="number" id="id_client" name="id_client" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
 
         <div class="flex flex-col gap-1">
-            <label for="id_activite">ID Activité:</label>
+            <label class="font-bold text-sm" for="id_activite">ID Activité:</label>
             <input type="number" id="id_activite" name="id_activite" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
 
        
         <div class="col-span-4">
-            <button type="submit" name="ajouter_reservation" id="ajouter_reservation" class="mt-4 items-center self-center align-middle  bg-[#d5a6f6] w-fit p-4 text-black hover:bg-[#a658d1] py-2 rounded-md">Ajouter la réservation</button>
+            <button type="submit" name="ajouter_reservation" id="ajouter_reservation" class=" mt-4 items-center self-center align-middle  bg-[#d5a6f6] w-fit px-4 text-black hover:bg-[#a658d1] py-2 rounded-md">Ajouter la réservation</button>
         </div>
         
     </form>
@@ -80,7 +80,7 @@ $title = "Gestion des réservations";
 
     if ($resultat) {
         echo '<div class="Table mt-8 h-[65%] overflow-auto">';
-        echo '<table class="w-full  overflow-auto text-sm text-center text-gray-500 bg-gray-100 rounded-md border border-purple-500 ">';
+        echo '<table class="w-full overflow-auto text-sm text-center text-gray-500 bg-gray-100  border border-purple-500 ">';
         echo '<thead class="text-s text-gray-700  bg-[#f9f3fe]">';
         echo '<tr>
                 <th scope="col" class="px-6 py-3">ID Reservation</th>
@@ -94,7 +94,7 @@ $title = "Gestion des réservations";
         echo '<tbody>';
     
         while ($row = mysqli_fetch_assoc($resultat)) {
-            echo '<tr class="bg-white border-b hover:bg-gray-50">';
+            echo '<tr class="bg-white lowercase hover:bg-purple-50">';
             echo "<td class='px-6 py-4'>{$row['id_reservation']}</td>";
             echo "<td class='px-6 py-4'>{$row['nom']} {$row['prenom']}</td>";
             echo "<td class='px-6 py-4'>{$row['titre']}</td>";

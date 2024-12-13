@@ -4,8 +4,8 @@ ob_start();
 $title = "Gestion des clients";
 ?>
 
-<section class="Formulaire_client bg-[#f9f3fe] h-[40%] w-full rounded-md grid grid-cols-[80%_20%] px-8 py-1">
-    <form id="form" class="grid grid-cols-2 md:grid-cols-3 md:grid-rows-3 gap-1 text-center items-center self-center justify-center" action="" method="post">
+<section class="Formulaire_client bg-[#f9f3fe] h-[30%] w-full  border border-purple-500 rounded-md grid md:grid-cols-[80%_20%] grid-cols-1 px-8 py-1 ">
+    <form id="form" class=" flex flex-wrap md:grid  md:grid-cols-6 md:grid-rows-2 gap-2 text-center items-center self-center justify-center" action="" method="post">
 
         <div class="flex flex-col gap-1">
             <label class="font-bold" for="nom">Nom</label>
@@ -34,17 +34,17 @@ $title = "Gestion des clients";
 
 
         <div class="flex flex-col gap-1">
-            <label class="font-bold" for="date_naissance">Date de naissance</label>
+            <label class="font-bold" for="date_naissance">D.naissance</label>
             <input type="date" id="date_naissance" name="date_naissance" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
         </div>
         <div></div>
-        <div>
-            <button type="submit" name="ajouter_client" id="ajouter_client" class="mt-4 items-center bg-[#d5a6f6] w-[50%] text-black hover:bg-[#a658d1] py-2 rounded-md">Ajouter le client</button>
+        <div  class="col-span-4">
+            <button type="submit" name="ajouter_client" id="ajouter_client" class="my-4 items-center bg-[#d5a6f6] w-fit p-4 text-black hover:bg-[#a658d1] py-2 rounded-md">Ajouter le client</button>
         </div>
         <div></div>
     </form>
 
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center ">
         <img src="./assets/Client.png" class="w-[90%]">
     </div>
    
@@ -80,8 +80,8 @@ $title = "Gestion des clients";
     $resultat = mysqli_query($conn, $query_select);
 
     if ($resultat) {
-        echo '<section class="Table  mt-8 mb-8 h-[65%] overflow-auto">';
-        echo '<table class="w-full  overflow-auto text-sm text-center text-gray-500 bg-gray-100 rounded-md border border-purple-500 overflow-hidden">';
+        echo '<section class="Table  mt-8 mb-16 h-[65%] overflow-auto">';
+        echo '<table class="w-full overflow-auto text-sm text-center text-gray-500 bg-gray-100  border border-purple-500">';
         echo '<thead class="text-s text-gray-700  bg-[#f9f3fe]">';
         echo '<tr>
                 <th scope="col" class="px-6 py-3">ID Client</th>
@@ -95,7 +95,7 @@ $title = "Gestion des clients";
         echo '<tbody>';
     
         while ($row = mysqli_fetch_assoc($resultat)) {
-            echo '<tr class="bg-white border-b hover:bg-gray-50">';
+            echo '<tr class="bg-white lowercase hover:bg-purple-50">';
             echo "<td class='px-6 py-3'>{$row['id_client']}</td>";
             echo "<td class='px-6 py-3'>{$row['nom']} {$row['prenom']}</td>";
             echo "<td class='px-6 py-3'>{$row['telephone']}</td>";
