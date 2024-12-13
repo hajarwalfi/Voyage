@@ -4,7 +4,7 @@ ob_start();
 $title = "Gestion des clients";
 ?>
 
-<div id="modal_client" class="hidden fixed inset-0 flex items-center justify-center z-20">
+<div id="modal" class="hidden fixed inset-0 flex items-center justify-center z-20">
     <div class="bg-blue-50 w-72 m-auto p-5 rounded-lg">
                 <form id="form" class="flex flex-col gap-1" action="" method="post">
                     <div class="flex flex-col gap-1">
@@ -54,60 +54,72 @@ $title = "Gestion des clients";
 
 <?php
 
-// Start Ajouter une réservation 
+    // Start Ajouter une réservation 
 
-if (isset($_POST['ajouter_client'])) {
+    if (isset($_POST['ajouter_client'])) {
 
-    $nom = mysqli_real_escape_string($conn, $_POST['nom']);
-    $prenom = mysqli_real_escape_string($conn, $_POST['prenom']);
-    $telephone = mysqli_real_escape_string($conn, $_POST['telephone']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $adresse = mysqli_real_escape_string($conn, $_POST['adresse']);
-    $date_naissance = mysqli_real_escape_string($conn, $_POST['date_naissance']);
+        $nom = mysqli_real_escape_string($conn, $_POST['nom']);
+        $prenom = mysqli_real_escape_string($conn, $_POST['prenom']);
+        $telephone = mysqli_real_escape_string($conn, $_POST['telephone']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $adresse = mysqli_real_escape_string($conn, $_POST['adresse']);
+        $date_naissance = mysqli_real_escape_string($conn, $_POST['date_naissance']);
 
-    $sql = "INSERT INTO client (nom, prenom, telephone, email ,adresse ,date_naissance) 
-            VALUES ('$nom','$prenom','$telephone', '$email' ,'$adresse','$date_naissance')";
-        
-    if (mysqli_query($conn, $sql)) {
-        echo "Réservation ajoutée avec succès";
-    } else {
-        echo "Erreur : " . $sql . "<br>" . mysqli_error($conn);
+        $sql = "INSERT INTO client (nom, prenom, telephone, email ,adresse ,date_naissance) 
+                VALUES ('$nom','$prenom','$telephone', '$email' ,'$adresse','$date_naissance')";
+            
+        if (mysqli_query($conn, $sql)) {
+            echo "Réservation ajoutée avec succès";
+        } else {
+            echo "Erreur : " . $sql . "<br>" . mysqli_error($conn);
+        }
     }
-}
 
-// End Ajouter une réservation
+    // End Ajouter une réservation
 
-// Start Afficher les réservations
+    // Start Afficher les réservations
 
-$query_select = "SELECT * FROM client" ;
+    $query_select = "SELECT * FROM client" ;
 
-$resultat = mysqli_query($conn, $query_select);
+    $resultat = mysqli_query($conn, $query_select);
 
-if ($resultat) {
-    echo "<div><table><thead><tr><th>ID Client</th><th>client</th><th>Telephone</th><th>Adresse</th><th>Date de naissance</th></tr></thead><tbody>";
-    while ($row = mysqli_fetch_assoc($resultat)) {
-        echo "<tr>
-        <td>{$row["id_client"]}</td>
-        <td>{$row["nom"]} {$row["prenom"]}</td>
-        <td>{$row["telephone"]}</td>
-        <td>{$row["email"]}</td>
-        <td>{$row["adresse"]}</td>
-        <td>{$row["date_naissance"]}</td>
-        </tr>";
+    if ($resultat) {
+        echo '<div class="overflow-x-auto relative mt-4">';
+        echo '<table class="table-auto w-full text-sm text-left text-gray-500 border border-gray-200">';
+        echo '<thead class="text-xs text-gray-700 uppercase bg-gray-100 border-b border-gray-200">';
+        echo '<tr>
+                <th scope="col" class="px-6 py-3">ID Client</th>
+                <th scope="col" class="px-6 py-3">Client</th>
+                <th scope="col" class="px-6 py-3">Telephone</th>
+                <th scope="col" class="px-6 py-3">Email</th>
+                <th scope="col" class="px-6 py-3">Adresse</th>
+                <th scope="col" class="px-6 py-3">Date de naissance</th>
+                </tr>';
+        echo '</thead>';
+        echo '<tbody>';
+    
+        while ($row = mysqli_fetch_assoc($resultat)) {
+            echo '<tr class="bg-white border-b hover:bg-gray-50">';
+            echo "<td class='px-6 py-4'>{$row['id_client']}</td>";
+            echo "<td class='px-6 py-4'>{$row['nom']} {$row['prenom']}</td>";
+            echo "<td class='px-6 py-4'>{$row['telephone']}</td>";
+            echo "<td class='px-6 py-4'>{$row['email']}</td>";
+            echo "<td class='px-6 py-4'>{$row['adresse']}</td>";
+            echo "<td class='px-6 py-4'>{$row['date_naissance']}</td>";
+            echo '</tr>';
+        }
+        echo '</tbody>';
+        echo '</table>';
+        echo '</div>';
     }
-    echo "</tbody></table></div>";
-}
 
-// End Afficher les réservations
+    // End Afficher les réservations
 
-
-
-
-// Fermeture de la connexion
-mysqli_close($conn);
-?>
-<?php
-$content = ob_get_clean();
-include 'layout.php';
+    // Fermeture de la connexion
+    mysqli_close($conn);
+    ?>
+    <?php
+    $content = ob_get_clean();
+    include 'design.php';
 ?>
 

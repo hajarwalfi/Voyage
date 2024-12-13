@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travigo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="flex flex-col gap-4">
-    <header>
-         
-    </header>
-
-
-    <footer>
-        
-    </footer>
-
-</body>
-</html>
-
-
+<?php
+include 'database.php';
+ob_start(); 
+$title = "Accueil";
+?>
 
 <?php
-
+$content = ob_get_clean(); 
+include 'design.php'; 
 
 ?>
