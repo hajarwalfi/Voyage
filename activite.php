@@ -4,58 +4,62 @@ ob_start();
 $title = "Gestion des activités";
 ?>
 
-<div id="modal" class="hidden fixed inset-0 flex items-center justify-center z-20">
-    <div class="bg-blue-50 w-72 m-auto p-5 rounded-lg">
-        <form id="form" class="flex flex-col gap-1"  action="" method="post">
-            <div class="flex flex-col gap-1">
-                <label for="titre">Titre:</label>
-                <input type="text" id="titre" name="titre" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-            </div>
+<section class="Formulaire_client bg-[#f9f3fe] h-[40%] w-full rounded-md grid grid-cols-[80%_20%] px-8 py-1">
+    <form id="form" class="grid md:grid-cols-5 gap-1 text-center items-center self-center justify-center" action="" method="post">
 
-            <div class="flex flex-col gap-1">
-                <label for="description">Description:</label>
-                <input type="text" id="description" name="description" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-            </div>
+        <div class="flex flex-col gap-1">
+            <label class="font-bold" for="titre">Titre</label>
+            <input type="text" id="titre" name="titre" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
+        </div>
 
-            <div class="flex flex-col gap-1">
-                <label for="destination">Destination</label>
-                <input type="text" id="destination" name="destination" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-            </div>
+        <div class="flex flex-col gap-1">
+            <label class="font-bold" for="description">Description</label>
+            <input type="text" id="description" name="description" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
+        </div>
 
-            <div class="flex flex-col gap-1">
-                <label for="prix">Prix:</label>
-                <input type="number" id="prix" name="prix" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-            </div>
-             
-            <div class="flex flex-col gap-1">
-                <label for="date_debut">Date de Début:</label>
-                <input type="date" id="date_debut" name="date_debut" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-            </div>
+        <div class="flex flex-col gap-1">
+            <label class="font-bold" for="destination">Destination</label>
+            <input type="text" id="destination" name="destination" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
+        </div>
 
-            <div class="flex flex-col gap-1">
-                <label for="date_fin">Date de Fin:</label>
-                <input type="date" id="date_fin" name="date_fin" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-            </div>
+        <div class="flex flex-col gap-1">
+            <label class="font-bold" for="prix">Prix</label>
+            <input type="number" id="prix" name="prix" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
+        </div>
+            
+        <div class="flex flex-col gap-1">
+            <label class="font-bold" for="date_debut">Date de Début</label>
+            <input type="date" id="date_debut" name="date_debut" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
+        </div>
 
-            <div class="flex flex-col gap-1">
-                <label for="places_disponibles">Places disponibles:</label>
-                <input type="number" id="places_disponibles" name="places_disponibles" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-            </div>
+        <div class="flex flex-col gap-1">
+            <label class="font-bold" for="date_fin">Date de Fin</label>
+            <input type="date" id="date_fin" name="date_fin" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
+        </div>
 
-            <div>
-                <button type="submit" name="ajouter_reservation" id="ajouter_reservation" class="mt-4 bg-blue-200 w-full text-white hover:bg-blue-400 py-2 rounded-md">Ajouter la réservation</button>
-                <button id="annuler_reservation" class="mt-4 bg-red-200 w-full text-white hover:bg-red-400 py-2 rounded-md">Annuler</button>
-            </div>
-        </form>
+        <div class="flex flex-col gap-1">
+            <label class="font-bold" for="places_disponibles">Places disponibles</label>
+            <input type="number" id="places_disponibles" name="places_disponibles" class="bg-gray-50 border border-[#a153c9] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#922fc5]">
+        </div>
+        
+        <div>
+            <button name="ajouter_activite" id="ajouter_activite" class="mt-4 items-center self-center align-middle  bg-[#d5a6f6] w-fit p-4 text-black hover:bg-[#a658d1] py-2 rounded-md">Ajouter le client</button>
+        </div>
+        <div></div>
+
+    </form>
+
+    <div class="flex justify-center items-center">
+        <img src="./assets/activite.png" class="w-[90%]">
     </div>
-</div>
-
+   
+</section>
 
 <?php
 
     // Start Ajouter une Activité 
 
-    if (isset($_POST['ajouter_reservation'])) {
+    if (isset($_POST['ajouter_activite'])) {
 
         $titre = mysqli_real_escape_string($conn, $_POST['titre']);
         $description = mysqli_real_escape_string($conn, $_POST['description']);
@@ -69,11 +73,6 @@ $title = "Gestion des activités";
         $sql = "INSERT INTO reservation (id_activite, titre, description, destination, prix, date_debut, date_fin, places_disponibles) 
                 VALUES ('$titre','$description','$destination','$prix','$date_debut','$date_fin','$places_disponibles')";
             
-        if (mysqli_query($conn, $sql)) {
-            echo "L'activité est ajoutée avec succès";
-        } else {
-            echo "Erreur : " . $sql . "<br>" . mysqli_error($conn);
-        }
     }
     
 

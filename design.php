@@ -15,16 +15,15 @@
 
 
 
-<body class="flex flex-col gap-4">
+<body class="flex flex-col gap-5 w-full">
     <header>
-        <div class="title bg-black flex items-center justify-between p-4 gap-1 h-20 ">
-            <img class="w-16" src="./assets/logo.png">
-            <div class="flex gap-4 items-center text-[#c9a04a] font-bold">
+        <div class="title flex items-center justify-between p-4 gap-1 h-20 ">
+            <img class="w-16" src="./assets/logo1.png">
+            <div class="flex gap-4 items-center text-black font-bold">
                 <a href="client.php" >Clients</a>
                 <a href="reservation.php">Reservations</a>
                 <a href="activite.php">Activités</a>
             </div>
-            <button id="new" name="new" type="button" class="focus:outline-none bg-yellow-300 px-2 py-1 rounded flex hover:bg-black hover:text-yellow-500 text-black"><span class="font-bold">New</span></button>
         </div>
     </header>
 
@@ -42,14 +41,8 @@
     <footer class="bg-black text-white">
         
         <!-- FIRST PART -->
-            <div class="flex justify-around items-center bg-[#946605] h-16 p-4">
-                <p class=" text-xl">Contact Us on Social Networks</p>
-                <ul class="flex  gap-4">
-                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                </ul>
+            <div class="flex justify-around items-center bg-[#f9f3fe] h-12 p-4">
+                <p class=" text-l text-black">All Right Reserved - Codebenders 2024</p>
             </div>
         <!-- END FIRST PART  -->        
     </footer>
