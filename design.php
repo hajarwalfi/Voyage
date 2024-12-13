@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travigo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="./assets/flaticon.png" type="image/x-icon">
+    <link rel="icon" href="./assets/logo1.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,8 +32,7 @@
         <div class=" h-full flex flex-col lg:flex-row lg:px-[20px] gap-20 relative justify-cente">
             <div class=" w-full ">
                 <?php
-                // Contenu de la page spécifique
-                echo isset($content) ? $content : '<p>Bienvenue sur le site de réservation de voyages.</p>';
+                echo isset($content) ? $content : '<p>Hello World!</p>';
                 ?>
             </div>
         </div>

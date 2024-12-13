@@ -1,7 +1,7 @@
 <?php
 include 'database.php';
 ob_start();
-$title = "Gestion des activités";
+
 ?>
 
 <section class="Formulaire_client bg-[#f9f3fe] h-[30%] w-full rounded-md grid md:grid-cols-[80%_20%]  grid-cols-1 px-8 py-1  border border-purple-500">
@@ -86,7 +86,7 @@ $title = "Gestion des activités";
 
 
     if ($resultat) {
-        echo '<div class="Table mt-8 h-[50%] overflow-auto">';
+        echo '<div class="Table mt-8 h-[70%] overflow-auto">';
         echo '<table class="w-full overflow-auto text-sm text-center text-gray-500 bg-gray-100  border border-purple-500 ">';
         echo '<thead class="text-s text-gray-700  bg-[#f9f3fe]">';
         echo '<tr>

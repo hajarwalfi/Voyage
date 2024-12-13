@@ -1,10 +1,9 @@
 <?php
 include 'database.php';
 ob_start();
-$title = "Gestion des réservations";
 ?>
 
-<section class="Formulaire_client bg-[#f9f3fe] h-[50%] w-full rounded-md grid grid-cols-[80%_20%] px-8 py-1">
+<section class="Formulaire_client bg-[#f9f3fe] h-[30%] w-full rounded-md grid grid-cols-[80%_20%] px-8 py-1">
     <form id="form" class=" grid md:grid-cols-4 gap-3 text-center items-center self-center justify-cente" action="" method="post">
 
         <div class="flex flex-col gap-1">
@@ -79,7 +78,7 @@ $title = "Gestion des réservations";
 
 
     if ($resultat) {
-        echo '<div class="Table mt-8 h-[65%] overflow-auto">';
+        echo '<div class="Table mb-8 mt-8 h-[70%] overflow-auto">';
         echo '<table class="w-full overflow-auto text-sm text-center text-gray-500 bg-gray-100  border border-purple-500 ">';
         echo '<thead class="text-s text-gray-700  bg-[#f9f3fe]">';
         echo '<tr>

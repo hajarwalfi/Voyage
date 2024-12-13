@@ -1,7 +1,6 @@
 <?php
 include 'database.php';
-ob_start();
-$title = "Gestion des clients";
+ob_start(); 
 ?>
 
 <section class="Formulaire_client bg-[#f9f3fe] h-[30%] w-full  border border-purple-500 rounded-md grid md:grid-cols-[80%_20%] grid-cols-1 px-8 py-1 ">
